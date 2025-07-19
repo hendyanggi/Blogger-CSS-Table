@@ -1,0 +1,61 @@
+/* Gaya umum untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Gaya untuk header tabel */
+th {
+    background-color: #4CAF50; /* Warna latar belakang hijau */
+    color: white;
+    padding: 12px 15px;
+}
+
+/* Gaya untuk sel tabel */
+td {
+    border: 1px solid #ddd; /* Garis batas abu-abu */
+    padding: 12px 15px;
+}
+
+/* Gaya untuk baris genap */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna latar belakang abu-abu muda */
+}
+
+/* Gaya saat hover pada baris */
+tr:hover {
+    background-color: #ddd; /* Warna latar belakang saat hover */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block; /* Menjadikan elemen blok */
+    }
+
+    th {
+        display: none; /* Menyembunyikan header pada layar kecil */
+    }
+
+    tr {
+        margin-bottom: 15px; /* Jarak antar baris */
+    }
+
+    td {
+        text-align: right; /* Rata kanan untuk sel */
+        position: relative;
+        padding-left: 50%; /* Ruang untuk label */
+    }
+
+    td::before {
+        content: attr(data-label); /* Menambahkan label sebelum nilai */
+        position: absolute;
+        left: 0;
+        padding-left: 15px; /* Jarak label dari kiri */
+        font-weight: bold;
+        text-transform: uppercase; /* Huruf kapital */
+    }
+}
